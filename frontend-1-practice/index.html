@@ -1,26 +1,102 @@
+
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!--
-      ЗАДАНИЕ
-      ========
-      Сверстать страницу выбора даты и времени по своему макету.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber House — Запись</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-      Пока это только вёрстка. Никакого JavaScript — ни кликов,
-      ни переходов, ни выбора дня. Всё статично.
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">BARBER HOUSE</h1>
+            <p class="header-text">Онлайн-запись</p>
+        </div>
+    </header>
 
-      Стили пишите в styles.css. Разметку — здесь.
-    -->
+    <main class="main">
+        <section class="booking">
+            <h2 class="booking-title">Выберите дату и время</h2>
+            <p class="booking-description">
+                Мужская стрижка · 1 час · 1500 ₽
+            </p>
 
-    <div class="page">
-      <!-- Начните отсюда. Разметьте шапку, основную область
-           с календарём и слотами, подвал. -->
-    </div>
-  </body>
+            <div class="calendar">
+                <h3 class="calendar-title">Ноябрь 2026</h3>
+
+                <div class="calendar-grid">
+                    <span class="weekday">Пн</span>
+                    <span class="weekday">Вт</span>
+                    <span class="weekday">Ср</span>
+                    <span class="weekday">Чт</span>
+                    <span class="weekday">Пт</span>
+                    <span class="weekday">Сб</span>
+                    <span class="weekday">Вс</span>
+
+                    <span class="empty-day"></span>
+                    <span class="empty-day"></span>
+                    <span class="empty-day"></span>
+                    <span class="empty-day"></span>
+                    <span class="empty-day"></span>
+                    <span class="empty-day"></span>
+
+                    <button class="day" type="button">1</button>
+                    <button class="day" type="button">2</button>
+                    <button class="day" type="button">3</button>
+                    <button class="day" type="button">4</button>
+                    <button class="day" type="button">5</button>
+                    <button class="day" type="button">6</button>
+                    <button class="day" type="button">7</button>
+                    <button class="day" type="button">8</button>
+                    <button class="day" type="button">9</button>
+                    <button class="day" type="button">10</button>
+                    <button class="day" type="button">11</button>
+                    <button class="day selected" type="button">12</button>
+                    <button class="day" type="button">13</button>
+                    <button class="day" type="button">14</button>
+                    <button class="day" type="button">15</button>
+                    <button class="day" type="button">16</button>
+                    <button class="day" type="button">17</button>
+                    <button class="day" type="button">18</button>
+                    <button class="day" type="button">19</button>
+                    <button class="day" type="button">20</button>
+                    <button class="day" type="button">21</button>
+                    <button class="day" type="button">22</button>
+                    <button class="day" type="button">23</button>
+                    <button class="day" type="button">24</button>
+                    <button class="day" type="button">25</button>
+                    <button class="day" type="button">26</button>
+                    <button class="day" type="button">27</button>
+                    <button class="day" type="button">28</button>
+                    <button class="day" type="button">29</button>
+                    <button class="day" type="button">30</button>
+                </div>
+            </div>
+
+            <section class="time-section">
+                <h3 class="time-title">Свободное время · 12 ноября</h3>
+
+                <div class="time-grid">
+                    <button class="time-slot" type="button">10:00</button>
+                    <button class="time-slot busy" type="button" disabled>11:30</button>
+                    <button class="time-slot active" type="button">13:00</button>
+                    <button class="time-slot" type="button">14:30</button>
+                    <button class="time-slot" type="button">16:00</button>
+                    <button class="time-slot" type="button">18:00</button>
+                </div>
+            </section>
+
+            <button class="continue-button" type="button">
+                Продолжить
+            </button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">© 2026 Barber House</p>
+    </footer>
+
+</body>
 </html>
