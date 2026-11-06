@@ -1,13 +1,321 @@
-/* Стили страницы.
-   Скопируйте с предудущей практики. */
 
+/* Общие настройки */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  min-height: 100vh;
-  font-family: sans-serif;
+    margin: 0;
+    background: #17191d;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* Шапка */
+.header {
+    border-bottom: 1px solid #414141;
+    padding: 20px;
+}
+
+.header-content {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    margin: 0;
+    color: #e7b77b;
+    font-size: 22px;
+}
+
+.header-text {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+/* Основная часть */
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.booking {
+    width: 100%;
+    max-width: 600px;
+}
+
+.booking-title {
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+.booking-description {
+    color: #aaaaaa;
+    margin: 0 0 30px;
+}
+
+/* Календарь */
+.calendar {
+    background: #25272b;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.calendar-title {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.month-button {
+    background: #303238;
+    color: #e7b77b;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.month-button:hover:not(:disabled) {
+    background: #55575d;
+}
+
+.month-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Сетка календаря */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+.weekday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 35px;
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.empty-day {
+    min-height: 42px;
+}
+
+.day {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding: 10px 0;
+    background: #303238;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.day:hover:not(:disabled) {
+    background: #55575d;
+}
+
+.day.selected {
+    background: #e7b77b;
+    color: #17191d;
+    font-weight: bold;
+}
+
+.day-disabled {
+    background: #252525;
+    color: #777777;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.day-disabled:hover {
+    background: #252525;
+}
+
+/* Время записи */
+.time-section {
+    margin-top: 30px;
+}
+
+.time-title {
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.time-slot {
+    background: #303238;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.time-slot:hover:not(:disabled) {
+    background: #55575d;
+}
+
+.time-slot.active {
+    background: #e7b77b;
+    color: #17191d;
+    font-weight: bold;
+}
+
+.time-slot.busy {
+    background: #252525;
+    color: #777777;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.time-slot:disabled {
+    cursor: not-allowed;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    color: #aaaaaa;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Нижняя панель */
+.bottom-bar {
+    margin-top: 30px;
+    background: #25272b;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.summary-label {
+    color: #aaaaaa;
+    font-size: 13px;
+}
+
+.summary-date {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.summary-time {
+    color: #e7b77b;
+    margin: 0;
+    font-size: 16px;
+}
+
+.continue-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    background: #e7b77b;
+    color: #17191d;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.continue-button:hover:not(:disabled) {
+    background: #f5cc98;
+    box-shadow: 0 4px 15px #e7b77b40;
+}
+
+.continue-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* Подвал */
+.footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-text {
+    color: #777777;
+    font-size: 13px;
+}
+
+/* Адаптация для телефона */
+@media (max-width: 480px) {
+    .main {
+        padding: 25px 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .booking-title {
+        font-size: 24px;
+    }
+
+    .calendar {
+        padding: 12px;
+    }
+
+    .calendar-title {
+        font-size: 17px;
+    }
+
+    .calendar-grid {
+        gap: 4px;
+    }
+
+    .day {
+        min-height: 36px;
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+    .weekday {
+        font-size: 12px;
+    }
+
+    .month-button {
+        padding: 6px 12px;
+    }
+
+    .time-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }

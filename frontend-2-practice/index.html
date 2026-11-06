@@ -1,14 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page">
-      <!-- Перенесите вашу верстку. Удалите статичные данные. Подключите скрипт -->
-    </div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber House — Запись</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">BARBER HOUSE</h1>
+            <span class="header-text">Онлайн-запись</span>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="booking">
+            <h2 class="booking-title">
+                Выберите дату и время
+            </h2>
+
+            <p class="booking-description">
+                Мужская стрижка · 1 час · 1500 ₽
+            </p>
+
+            <section class="calendar">
+                <div class="calendar-header">
+                    <button
+                        class="month-button"
+                        id="prev-month"
+                        type="button"
+                        aria-label="Предыдущий месяц"
+                    >‹</button>
+
+                    <h3 class="calendar-title" id="month-title">
+                        Календарь
+                    </h3>
+
+                    <button
+                        class="month-button"
+                        id="next-month"
+                        type="button"
+                        aria-label="Следующий месяц"
+                    >›</button>
+                </div>
+
+                <div class="calendar-grid" id="calendar-grid">
+                </div>
+            </section>
+
+            <section class="time-section">
+                <h3 class="time-title" id="time-title">
+                    Свободное время
+                </h3>
+
+                <div class="time-grid" id="time-grid">
+                </div>
+            </section>
+
+            <section class="bottom-bar">
+                <div class="booking-summary">
+                    <span class="summary-label">
+                        Ваша запись
+                    </span>
+                    <p class="summary-date" id="summary-date">
+                        Выберите дату
+                    </p>
+                    <p class="summary-time" id="summary-time">
+                        Время не выбрано
+                    </p>
+                </div>
+
+                <button
+                    class="continue-button"
+                    id="continue-button"
+                    type="button"
+                    disabled
+                >
+                    Продолжить
+                </button>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">
+            © 2026 Barber House
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
